@@ -2,7 +2,7 @@
   "name": "aplusman",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://xb0yx2k20.github.io/aplusman",
+  "homepage": "https://xb0yx2k20.github.io/client",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
