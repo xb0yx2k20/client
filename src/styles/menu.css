@@ -1,0 +1,260 @@
+/* Основные стили для меню */
+.scroll-menu {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background: #1c222e;
+  border-radius: 250px;
+  padding: 10px 20px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.scroll-menu.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.menu-items-wrapper {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-items-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-item {
+  padding: 8px 15px;
+  font-size: 16px;
+  color: #999999;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  position: relative; /* Для позиционирования псевдоэлементов */
+}
+
+.menu-item.active {
+  color: #fff;
+  font-weight: bold;
+}
+
+.menu-item:hover {
+  color: #fff;
+}
+
+/* Добавление черты для первого и последнего элементов */
+@media (min-width: 769px) {
+  .menu-item:first-child::after {
+    content: "";
+    position: absolute;
+    right: -5px; /* Половина gap (10px / 2) */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background-color: #999999; /* Цвет черты */
+  }
+
+  .menu-item:last-child::before {
+    content: "";
+    position: absolute;
+    left: -5px; /* Половина gap (10px / 2) */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background-color: #999999; /* Цвет черты */
+  }
+}
+
+/* Стили для бургер-меню */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* Стили для иконки бургера */
+.burger-icon {
+  width: 24px;
+  height: 14px;
+  position: relative;
+  display: block;
+}
+
+/* Линии бургера */
+.burger-icon::before,
+.burger-icon::after,
+.burger-icon span {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.burger-icon::before {
+  top: 0;
+}
+
+.burger-icon span {
+  top: 6px;
+}
+
+.burger-icon::after {
+  bottom: 0;
+}
+
+.burger-icon.open span {
+  opacity: 0;
+}
+
+.burger-icon.open::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.burger-icon.open::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Для больших экранов (> 1024px) */
+@media (min-width: 1025px) {
+  .scroll-menu {
+    max-width: 80%;
+  }
+
+  .menu-items-wrapper {
+    justify-content: center;
+  }
+}
+
+/* Для средних экранов (768px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .scroll-menu {
+    padding: 8px 15px;
+    border-radius: 200px;
+  }
+
+  .menu-items-wrapper {
+    gap: 8px;
+  }
+
+  .menu-item {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Для мобильных (ширина < 768px) */
+@media (max-width: 768px) {
+  .scroll-menu {
+    bottom: 10px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    transform: translateY(100%);
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+  }
+
+  .scroll-menu.visible {
+    transform: translateY(0);
+  }
+
+  .scroll-menu.open {
+    background: transparent;
+    padding: 0;
+    width: 40px;
+  }
+
+  .burger-menu {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    z-index: 1001;
+  }
+
+  .menu-items-wrapper {
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: #1c222e;
+    border-radius: 10px;
+    padding: 10px;
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    width: 200px;
+    transform: translateX(-50%);
+    max-height: 70vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  .scroll-menu.open .menu-items-wrapper {
+    pointer-events: auto;
+  }
+
+  .menu-item {
+    padding: 8px 15px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+}
+
+/* Для очень маленьких экранов (< 480px) */
+@media (max-width: 480px) {
+  .scroll-menu {
+    margin-left: -18px;
+    width: 36px;
+  }
+
+  .burger-menu {
+    width: 36px;
+    height: 36px;
+  }
+
+  .menu-items-wrapper {
+    padding: 8px;
+    max-height: 60vh;
+    width: 180px;
+    transform: translateX(-50%);
+  }
+
+  .menu-item {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .burger-icon {
+    width: 20px;
+    height: 12px;
+  }
+
+  .burger-icon.open::before {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .burger-icon.open::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}

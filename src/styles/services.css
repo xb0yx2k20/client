@@ -1,0 +1,189 @@
+/* Стили для секции Block4 */
+#block4.panel {
+  flex: 0 0 100%;
+  min-height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cbcbcb;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background: #030917;
+}
+
+/* Контейнер для услуг */
+#block4 .services-container {
+  max-width: 1140px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Скрываем стандартный скроллбар */
+#block4 .services-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#block4 .services-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#block4 .services-container::-webkit-scrollbar-thumb {
+  background: #1a2b5f;
+  border-radius: 4px;
+}
+
+/* Категория услуг */
+#block4 .service-category {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Заголовок категории */
+#block4 .category-title {
+  font-size: 30px;
+  color: #cbcbcb;
+  font-weight: 500;
+  border-bottom: 1px solid #cbcbcb;
+  padding-bottom: 10px;
+  opacity: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer; /* Указываем, что элемент кликабельный */
+  transition: color 0.3s ease;
+}
+
+/* Эффект наведения на заголовок */
+#block4 .category-title:hover {
+  color: #ffffff;
+}
+
+/* Кнопка +/– */
+#block4 .toggle-button {
+  color: #999999;
+  font-size: 24px;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+
+/* Эффект наведения на кнопку (вместе с заголовком) */
+#block4 .category-title:hover .toggle-button {
+  color: #fff;
+}
+
+/* Список услуг */
+#block4 .service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden;
+}
+
+/* Элемент списка услуг */
+#block4 .service-item {
+  font-size: 18px;
+  color: #999999;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+}
+
+/* Добавляем маркер перед пунктом */
+#block4 .service-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #1a2b5f;
+  font-size: 20px;
+}
+
+/* Эффект наведения на подпункт */
+#block4 .service-item:hover {
+  color: #fff;
+  transform: translateX(5px);
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+/* Медиа-запросы для мобильных (ширина < 768px) */
+@media (max-width: 768px) {
+  #block4.panel {
+    height: auto;
+    padding: 20px;
+  }
+
+  #block4 .services-container {
+    max-height: none;
+    overflow-y: visible;
+    gap: 30px;
+  }
+
+  #block4 .category-title {
+    font-size: 24px;
+    padding-bottom: 8px;
+  }
+
+  #block4 .toggle-button {
+    font-size: 20px;
+    padding: 0 8px;
+  }
+
+  #block4 .service-list {
+    gap: 12px;
+  }
+
+  #block4 .service-item {
+    font-size: 16px;
+    padding-left: 18px;
+  }
+
+  #block4 .service-item::before {
+    font-size: 18px;
+  }
+}
+
+/* Для очень маленьких экранов (< 480px) */
+@media (max-width: 480px) {
+  #block4.panel {
+    padding: 15px;
+  }
+
+  #block4 .services-container {
+    gap: 20px;
+  }
+
+  #block4 .category-title {
+    font-size: 20px;
+    padding-bottom: 6px;
+  }
+
+  #block4 .toggle-button {
+    font-size: 18px;
+    padding: 0 6px;
+  }
+
+  #block4 .service-list {
+    gap: 10px;
+  }
+
+  #block4 .service-item {
+    font-size: 14px;
+    padding-left: 16px;
+  }
+
+  #block4 .service-item::before {
+    font-size: 16px;
+  }
+}

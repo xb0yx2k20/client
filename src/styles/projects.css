@@ -1,0 +1,213 @@
+/* Стили для секции Block3 */
+#block3.panel {
+  flex: 0 0 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cbcbcb;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Контейнер для текста */
+#block3 .text-container {
+  font-size: 30px;
+  text-align: justify;
+  line-height: 1.5;
+  max-width: 1140px;
+  width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  text-justify: inter-word;
+  cursor: default;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Стили для слов */
+#block3 .word {
+  display: inline-block;
+  margin-right: 8px;
+  opacity: 0;
+}
+
+/* Стили для букв внутри слов */
+#block3 .letter {
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  position: relative;
+}
+
+/* Эффект наведения на буквы */
+#block3 .letter:hover {
+  color: #ffffff;
+  transform: scale(1.3);
+}
+
+/* Контейнер для галереи */
+#block3 .gallery-container {
+  width: 100%;
+  height: auto;
+  max-width: 1140px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+  gap: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Стили для элементов галереи */
+#block3 .gallery-item {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: brightness(0.3);
+  cursor: pointer;
+  will-change: transform;
+  backface-visibility: hidden;
+  position: relative;
+  border-radius: 15px;
+}
+
+/* Заголовок внутри галереи */
+#block3 .gallery-title {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  color: #fff;
+  font-size: 14px;
+  padding: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+#block3 .gallery-item:hover .gallery-title,
+#block3 .gallery-item.touch-active .gallery-title {
+  opacity: 1;
+}
+
+#block3 .countdown-inline {
+  font-size: 30px;
+  color: #cbcbcb;
+  animation: blink 1s infinite;
+}
+
+/* Анимация для отсчета */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Эффект наведения */
+@media (hover: hover) and (pointer: fine) {
+  #block3 .gallery-item:hover {
+    transform: scale(1.4);
+    filter: brightness(1);
+    z-index: 2;
+  }
+}
+
+#block3 .gallery-item.active {
+  transform: scale(1.4);
+  filter: brightness(1);
+  z-index: 2;
+}
+
+/* Разные размеры для "тетрис-эффекта" */
+#block3 .gallery-item.tall {
+  grid-row: span 2;
+}
+
+#block3 .gallery-item.wide {
+  grid-column: span 2;
+}
+
+/* Медиа-запросы для мобильных (ширина < 768px) */
+@media (max-width: 768px) {
+  #block3.panel {
+    flex: 0 0 auto;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    max-width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  #block3 .text-container {
+    font-size: 18px;
+    max-width: 90%;
+    line-height: 1.4;
+    text-align: justify;
+    cursor: default;
+  }
+
+  #block3 .countdown-inline {
+    font-size: 18px;
+  }
+
+  #block3 .word {
+    margin-right: 4px;
+  }
+
+  #block3 .letter:hover {
+    color: #999999;
+    transform: none;
+  }
+
+  #block3 .gallery-container {
+    max-width: 95%;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-auto-rows: 140px;
+    gap: 6px;
+    margin: 0 auto;
+  }
+
+  #block3 .gallery-item:hover {
+    transform: none;
+  }
+
+  #block3 .gallery-title {
+    font-size: 10px;
+  }
+}
+
+/* Для очень маленьких экранов (< 480px) */
+@media (max-width: 480px) {
+  #block3 .text-container {
+    font-size: 16px;
+    max-width: 95%;
+    line-height: 1.3;
+  }
+
+  #block3 .countdown-inline {
+    font-size: 16px;
+  }
+
+  #block3 .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-auto-rows: 120px;
+    gap: 4px;
+    margin: 0 auto;
+  }
+
+  #block3 .gallery-title {
+    font-size: 10px;
+  }
+}

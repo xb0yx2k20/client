@@ -1,0 +1,109 @@
+/* Стили для секции Contacts */
+#contacts.panel {
+  flex: 0 0 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px; /* Как в #block6.panel */
+  box-sizing: border-box;
+  background-color: #030917;
+}
+
+/* Контейнер для контактов */
+#contacts .contacts-container {
+  max-width: 1140px; /* Как в #block6 .advantages-container */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Правая колонка (карта и ссылки) */
+#contacts .contact-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1140px; /* Соответствует 12 колонкам */
+}
+
+/* Карта */
+#contacts .contact-map {
+  width: 100%;
+  height: 40vh; /* Высота для ПК */
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Убедимся, что карта внутри занимает всю высоту */
+#contacts .contact-map > * {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ссылки (Telegram, Email, Telephone) */
+#contacts .contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+#contacts .contact-link {
+  font-size: 14px;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#contacts .contact-link:hover {
+  color: #ffffff;
+}
+
+/* Медиа-запросы для мобильных (ширина < 768px) */
+@media (max-width: 768px) {
+  #contacts.panel {
+    height: auto;
+    padding: 20px; /* Как в #block6.panel */
+  }
+
+  #contacts .contacts-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #contacts .contact-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #contacts .contact-map {
+    height: 40vh;
+  }
+
+  #contacts .contact-link {
+    font-size: 13px;
+  }
+}
+
+/* Для очень маленьких экранов (< 480px) */
+@media (max-width: 480px) {
+  #contacts.panel {
+    padding: 15px; /* Как в #block6.panel */
+  }
+
+  #contacts .contact-map {
+    height: 40vh;
+  }
+
+  #contacts .contact-link {
+    font-size: 12px;
+  }
+}

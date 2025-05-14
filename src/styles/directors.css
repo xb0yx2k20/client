@@ -1,0 +1,175 @@
+/* Стили для секции Directors */
+#directors.panel {
+  flex: 0 0 100%;
+  min-height: 100vh;
+  height: 100vh; /* Заменяем 100dvh на 100vh */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999999;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Контейнер для директоров */
+#directors .directors-container {
+  max-width: 1140px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Сетка для карточек */
+#directors .directors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  /* Убираем max-height и overflow: hidden, чтобы масштабирование работало */
+  padding: 20px 0; /* Добавляем немного пространства */
+}
+
+/* Карточка директора */
+#directors .director-card {
+  flex: 0 1 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Для корректного масштабирования */
+}
+
+/* Эффект наведения и касания */
+#directors .director-card:hover,
+#directors .director-card:active {
+  transform: scale(1.1) !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Фотография директора */
+#directors .director-photo {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  transition: filter 0.3s ease;
+  filter: brightness(0.8);
+}
+
+/* Эффект наведения на фото */
+#directors .director-card:hover .director-photo,
+#directors .director-card:active .director-photo {
+  filter: brightness(1);
+}
+
+#directors .director-card:hover .director-name,
+#directors .director-card:active .director-name {
+  color: white;
+}
+
+#directors .director-card:hover .director-position,
+#directors .director-card:active .director-position {
+  color: #cccccc;
+}
+
+/* Имя директора */
+#directors .director-name {
+  font-size: 24px;
+  color: #cccccc;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+
+}
+
+#directors .director-name:hover {
+  cursor: default;
+}
+
+/* Должность директора */
+#directors .director-position {
+  font-size: 16px;
+  color: #999999;
+  font-style: italic;
+  transition: color 0.3s ease;
+
+}
+
+#directors .director-position:hover {
+  cursor: default;
+}
+
+/* Медиа-запросы для мобильных (ширина < 768px) */
+@media (max-width: 768px) {
+  #directors.panel {
+    height: auto;
+    padding: 20px;
+  }
+
+  #directors .directors-container {
+    height: auto;
+    gap: 30px;
+  }
+
+  #directors .directors-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  #directors .director-card {
+    flex: 0 1 280px;
+    padding: 15px;
+  }
+
+  #directors .director-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  #directors .director-name {
+    font-size: 20px;
+  }
+
+  #directors .director-position {
+    font-size: 14px;
+  }
+}
+
+/* Для очень маленьких экранов (< 480px) */
+@media (max-width: 480px) {
+  #directors.panel {
+    padding: 15px;
+  }
+
+  #directors .directors-grid {
+    gap: 15px;
+  }
+
+  #directors .director-card {
+    flex: 0 1 240px;
+    padding: 10px;
+  }
+
+  #directors .director-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  #directors .director-name {
+    font-size: 18px;
+  }
+
+  #directors .director-position {
+    font-size: 13px;
+  }
+}

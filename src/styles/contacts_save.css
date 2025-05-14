@@ -1,0 +1,209 @@
+/* Стили для секции Contacts */
+#contacts.panel {
+    flex: 0 0 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background-color: #030917;
+  }
+  
+  /* Контейнер для контактов */
+  #contacts .contacts-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    gap: 50px;
+  }
+  
+  /* Левая колонка (форма) */
+  #contacts .contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Правая колонка (карта и ссылки) */
+  #contacts .contact-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  /* Заголовок формы */
+  #contacts .contact-title {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  
+  /* Карта */
+  #contacts .contact-map {
+    width: 100%;
+    height: 400px; /* Увеличена высота, так как текст убран */
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  /* Обёртка для формы */
+  #contacts .form-wrapper {
+    width: 100%;
+    padding: 30px;
+  }
+  
+  /* Форма обратной связи */
+  #contacts .contact-form {
+    width: 100%;
+  }
+  
+  /* Группа полей формы */
+  #contacts .form-group {
+    margin-bottom: 20px;
+  }
+  
+  #contacts .form-group input,
+  #contacts .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    color: #e0e0e0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  #contacts .form-group input:focus,
+  #contacts .form-group textarea:focus {
+    border-color: #fff;
+    outline: none;
+  }
+  
+  #contacts .form-group textarea {
+    resize: vertical;
+  }
+  
+  /* Кнопка отправки */
+  #contacts .submit-button {
+    padding: 12px 24px;
+    font-size: 14px;
+    color: #030917;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #contacts .submit-button:hover {
+    background-color: #cccccc;
+  }
+  
+  /* Ссылки (Telegram, Email) */
+  #contacts .contact-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  #contacts .contact-link {
+    font-size: 14px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  #contacts .contact-link:hover {
+    color: #cccccc;
+  }
+  
+  /* Медиа-запросы для мобильных (ширина < 768px) */
+  @media (max-width: 768px) {
+    #contacts.panel {
+      height: auto;
+      padding: 20px;
+    }
+  
+    #contacts .contacts-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    #contacts .contact-left,
+    #contacts .contact-right {
+      width: 100%;
+    }
+  
+    #contacts .contact-title {
+      font-size: 32px;
+    }
+  
+    #contacts .contact-map {
+      height: 300px;
+    }
+  
+    #contacts .form-wrapper {
+      padding: 20px;
+    }
+  
+    #contacts .form-group input,
+    #contacts .form-group textarea {
+      font-size: 13px;
+      padding: 10px;
+    }
+  
+    #contacts .submit-button {
+      font-size: 13px;
+      padding: 10px 20px;
+    }
+  
+    #contacts .contact-link {
+      font-size: 13px;
+    }
+  }
+  
+  /* Для очень маленьких экранов (< 480px) */
+  @media (max-width: 480px) {
+    #contacts.panel {
+      padding: 15px;
+    }
+  
+    #contacts .contact-title {
+      font-size: 28px;
+    }
+  
+    #contacts .contact-map {
+      height: 250px;
+    }
+  
+    #contacts .form-wrapper {
+      padding: 15px;
+    }
+  
+    #contacts .form-group input,
+    #contacts .form-group textarea {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    #contacts .submit-button {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+  
+    #contacts .contact-link {
+      font-size: 12px;
+    }
+  }

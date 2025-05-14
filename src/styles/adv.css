@@ -1,0 +1,193 @@
+/* Стили для секции Block6 */
+#block6.panel {
+  flex: 0 0 100%;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999999;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Контейнер для преимуществ */
+#block6 .advantages-container {
+  max-width: 1140px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center; /* Центрируем содержимое, включая кнопку */
+}
+
+/* Скрываем стандартный скроллбар */
+#block6 .advantages-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#block6 .advantages-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#block6 .advantages-container::-webkit-scrollbar-thumb {
+  background: #1a2b5f;
+  border-radius: 15px;
+}
+
+/* Главный заголовок */
+#block6 .main-title {
+  font-size: 36px;
+  color: #999999;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Сетка для карточек */
+#block6 .advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%; /* Убедимся, что сетка занимает всю ширину */
+}
+
+/* Карточка преимущества */
+#block6 .advantage-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Эффект наведения */
+#block6 .advantage-card:hover {
+  transform: scale(1.1) !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#block6 .advantage-card:hover .advantage-title {
+  color: white;
+}
+
+#block6 .advantage-card:hover .advantage-description {
+  color: #cccccc;
+}
+
+/* Заголовок карточки */
+#block6 .advantage-title {
+  font-size: 24px;
+  color: #cccccc;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+#block6 .advantage-title:hover {
+  cursor: default;
+}
+
+/* Описание карточки */
+#block6 .advantage-description {
+  font-size: 16px;
+  color: #999999;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+#block6 .advantage-description:hover {
+  cursor: default;
+}
+
+/* Стили для кнопки скачивания */
+#block6 .download-button {
+  display: inline-block;
+  /* background: rgba(255, 255, 255, 0.05); */
+  color: #cccccc;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+#block6 .download-button:hover {
+  color: #ffffff;
+}
+
+/* Медиа-запросы для мобильных (ширина < 768px) */
+@media (max-width: 768px) {
+  #block6.panel {
+      height: auto;
+      padding: 20px;
+  }
+
+  #block6 .advantages-container {
+      max-height: none;
+      overflow-y: visible;
+      gap: 30px;
+  }
+
+  #block6 .main-title {
+      font-size: 28px;
+  }
+
+  #block6 .advantages-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+
+  #block6 .advantage-card {
+      padding: 15px;
+  }
+
+  #block6 .advantage-title {
+      font-size: 20px;
+  }
+
+  #block6 .advantage-description {
+      font-size: 14px;
+  }
+
+  #block6 .download-button {
+      font-size: 16px;
+      padding: 8px 16px;
+  }
+}
+
+/* Для очень маленьких экранов (< 480px) */
+@media (max-width: 480px) {
+  #block6.panel {
+      padding: 15px;
+  }
+
+  #block6 .advantages-container {
+      gap: 20px;
+  }
+
+  #block6 .main-title {
+      font-size: 24px;
+  }
+
+  #block6 .advantages-grid {
+      gap: 10px;
+  }
+
+  #block6 .advantage-card {
+      padding: 10px;
+  }
+
+  #block6 .advantage-title {
+      font-size: 18px;
+  }
+
+  #block6 .advantage-description {
+      font-size: 13px;
+  }
+
+  #block6 .download-button {
+      font-size: 14px;
+      padding: 6px 12px;
+  }
+}
